@@ -1,0 +1,6 @@
+{
+  "name": "MathSearch",
+  "description": "A mathematical search engine with AI-powered concept explanations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["view-dashboard"]
+}
