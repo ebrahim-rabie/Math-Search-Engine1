@@ -122,8 +122,13 @@ _CACHE_TTL = 3600  # 1 hour
 def startup_event():
     try:
         max_docs = int(os.getenv("MAX_DOCS", 15000))
-        df  = pd.read_csv(CSV1_PATH, nrows=max_docs)
-        df1 = pd.read_csv(CSV2_PATH, nrows=max_docs)
+        
+        # Load the 5MB sample dataset for fast deployment
+        sample_path = os.path.join(BASE_DIR, "Documents1", "sample_math.csv")
+        df1 = pd.read_csv(sample_path, nrows=max_docs)
+        
+        # Create an empty dataframe for df to prevent variable errors
+        df = pd.DataFrame(columns=["text"])
     except FileNotFoundError as e:
         logger.error("Could not load CSV: %s", e)
         _state["ready"] = False
