@@ -1,0 +1,17 @@
+.git
+.gitignore
+.gitattributes
+Frontend/node_modules
+Frontend/.env
+Frontend/dist
+Backend/__pycache__
+Backend/.env
+Project/
+*.pyc
+__pycache__
+.vscode
+.idea
+gemini_error.txt
+models_list.txt
+test_gemini.py
+Documents1/
